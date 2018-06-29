@@ -9,7 +9,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 import React, { Component } from 'react';
 import 'hpe-css-grommet';
 
-import { Sidebar, Header, Title, Box, Menu, Anchor, Footer, Button } from 'grommet';
+import { Sidebar, Header, Title, Box, Footer, Button } from 'grommet';
 
 var SideBar = function (_Component) {
   _inherits(SideBar, _Component);
@@ -40,17 +40,7 @@ var SideBar = function (_Component) {
           Box,
           { flex: 'grow',
             justify: 'start' },
-          React.createElement(
-            Menu,
-            { primary: true },
-            this.props.menu.map(function (menu) {
-              return React.createElement(
-                Anchor,
-                { className: window.location.pathname === menu.path ? 'active' : '', href: menu.path, key: menu.name },
-                menu.name
-              );
-            })
-          )
+          this.props.menu
         ),
         React.createElement(
           Footer,
